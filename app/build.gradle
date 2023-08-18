@@ -18,8 +18,22 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "default"
+
+    productFlavors {
+        free {
+            applicationIdSuffix ".free"
+            versionNameSuffix ".free"
+        }
+        paid {
+            applicationIdSuffix ".paid"
+            versionNameSuffix ".paid"
+        }
+    }
+
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
