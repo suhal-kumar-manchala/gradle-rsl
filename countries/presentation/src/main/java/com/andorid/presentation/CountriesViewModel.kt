@@ -19,11 +19,7 @@ class CountriesViewModel @Inject constructor(private val getcountriesUseCase: Ge
     val countries: StateFlow<CountriesState> = _countries
 
 
-    init {
-        getCountriesArticles()
-    }
-
-    private fun getCountriesArticles() {
+    fun getCountriesArticles() {
         getcountriesUseCase().onEach {
             when (it) {
                 is Resource.Loading -> {
