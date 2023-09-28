@@ -18,8 +18,22 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "default"
+
+    productFlavors {
+        free {
+            applicationIdSuffix ".free"
+            versionNameSuffix ".free"
+        }
+        paid {
+            applicationIdSuffix ".paid"
+            versionNameSuffix ".paid"
+        }
+    }
+
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -48,10 +62,19 @@ dependencies {
     implementation Deps.appCompat
     implementation Deps.androidMaterial
     implementation Deps.constraintLayout
-    testImplementation TestImplementation.junit
-    androidTestImplementation AndroidTestImplementation.junit
-    androidTestImplementation AndroidTestImplementation.espresso
-
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.6.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+    androidTestImplementation 'androidx.arch.core:core-testing:2.2.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3"
+    androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.7.3'
+    testImplementation 'org.mockito:mockito-core:3.6.0'
+    androidTestImplementation 'org.mockito:mockito-core:3.6.0'
+    androidTestImplementation 'org.mockito:mockito-android:3.6.0'
     implementation LottieAnimations.lottieAnimations
 
     implementation DaggerHilt.hilt
