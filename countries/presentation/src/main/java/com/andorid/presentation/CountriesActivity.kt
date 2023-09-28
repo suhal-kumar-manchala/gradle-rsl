@@ -44,6 +44,7 @@ class CountriesActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.rvArticles.adapter = countriesAdapter
+        countriesViewModel.getCountriesArticles()
     }
 
     private fun setObservers() {
