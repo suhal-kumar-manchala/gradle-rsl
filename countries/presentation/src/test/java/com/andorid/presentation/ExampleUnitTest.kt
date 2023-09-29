@@ -1,4 +1,4 @@
-package com.andorid.news_data
+package com.andorid.presentation
 
 import org.junit.Test
 
