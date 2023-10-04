@@ -7,17 +7,6 @@ plugins {
     id 'org.sonarqube'
 }
 
-sonar {
-    properties {
-        // Insert other SonarQube properties here
-        property 'sonar.sources', "./src/main"
-        property 'sonar.host.url', 'https://sonarcloud.io/'
-        property 'sonar.organization', 'suhal-kumar-manchala'
-        property 'sonar.projectKey', 'suhal-kumar-manchala_gradle-rsl'
-        property 'sonar.coverage.jacoco.xmlReportPaths', "$projectDir.parentFile.path/build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
-    }
-}
-
 android {
     compileSdk 33
 
