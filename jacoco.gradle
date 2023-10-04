@@ -65,6 +65,7 @@ def createVariantCoverage(variant) {
         description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build."
 
         reports {
+            xml.required = true
             html.required = true
             csv.required = true
         }
