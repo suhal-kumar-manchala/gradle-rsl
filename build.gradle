@@ -16,7 +16,3 @@ allprojects {
         resolutionStrategy.force 'org.objenesis:objenesis:2.6'
     }
 }
-
-subprojects {
-    apply plugin: 'org.sonarqube'
-}
